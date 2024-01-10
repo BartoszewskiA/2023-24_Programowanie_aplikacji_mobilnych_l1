@@ -1,5 +1,6 @@
 package com.example.lab07p01;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -50,6 +51,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void zarejestruj() {
+        Intent intencja = new Intent(this, MainActivity3.class);
+        startActivityForResult(intencja, 1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1 && resultCode==RESULT_OK)
+        {
+            String l = data.getStringExtra("l");
+            String p = data.getStringExtra("p");
+            uzytkownicy.add(new Osoba(l,p));
+        }
+
     }
 
     private void zaloguj() {

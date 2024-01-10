@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">lab08p01</string>
+    <string-array name="opisy">
+        <item>Lew</item>
+        <item>Wilk</item>
+        <item>Rekin</item>
+    </string-array>
+</resources>
